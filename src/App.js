@@ -157,6 +157,7 @@ const App = () => {
       preferredProtocol: "preferredProtocol",
       //
       mode: "mode",
+      metaData: "metaData",
       //
       hlsEnabled: "hlsEnabled",
       autoStartHls: "autoStartHls",
@@ -333,6 +334,12 @@ const App = () => {
 
     if (typeof paramKeys.canPin !== "string") {
       paramKeys.canPin = "false";
+    }
+
+    if (typeof paramKeys.metaData === "string") {
+      paramKeys.metaData = JSON.parse(paramKeys.metaData ?? "");
+    } else {
+      paramKeys.metaData = {};
     }
 
     switch (paramKeys?.layoutType?.toUpperCase()) {
@@ -826,6 +833,7 @@ const App = () => {
               autoConsume: false,
               mode: paramKeys.mode,
               multiStream: paramKeys.multiStream === "true",
+              metaData: paramKeys.metaData,
             }}
             token={paramKeys.token}
             joinWithoutUserInteraction
