@@ -1,0 +1,243 @@
+/*
+        object-assign
+        (c) Sindre Sorhus
+        @license MIT
+        */
+
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+/*!
+ * Compressor.js v1.2.1
+ * https://fengyuanchen.github.io/compressorjs
+ *
+ * Copyright 2018-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2023-02-28T14:09:41.732Z
+ */
+
+/*! ./Component */
+
+/*! ./Context */
+
+/*! ./checkPropTypes */
+
+/*! ./cjs/react-is.development.js */
+
+/*! ./factoryWithTypeCheckers */
+
+/*! ./lib/ReactPropTypesSecret */
+
+/*! ./lib/has */
+
+/*! ./mediaQuery */
+
+/*! ./toQuery */
+
+/*! ./useMediaQuery */
+
+/*! Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak) */
+
+/*! css-mediaquery */
+
+/*! hyphenate-style-name */
+
+/*! matchmediaquery */
+
+/*! object-assign */
+
+/*! prop-types */
+
+/*! react */
+
+/*! react-is */
+
+/*! shallow-equal */
+
+/*!******************!*\
+        !*** ./index.js ***!
+        \******************/
+
+/*!**********************!*\
+        !*** ./src/index.ts ***!
+        \**********************/
+
+/*!************************!*\
+        !*** ./src/Context.ts ***!
+        \************************/
+
+/*!************************!*\
+        !*** ./src/toQuery.ts ***!
+        \************************/
+
+/*!**************************!*\
+        !*** ./src/Component.ts ***!
+        \**************************/
+
+/*!***************************!*\
+        !*** ./src/mediaQuery.ts ***!
+        \***************************/
+
+/*!******************************!*\
+        !*** ./src/useMediaQuery.ts ***!
+        \******************************/
+
+/*!****************************************!*\
+        !*** ./node_modules/react-is/index.js ***!
+        \****************************************/
+
+/*!*****************************************!*\
+        !*** ./src/face-detection/processor.js ***!
+        \*****************************************/
+
+/*!******************************************!*\
+        !*** ./node_modules/prop-types/index.js ***!
+        \******************************************/
+
+/*!********************************************!*\
+        !*** ./node_modules/prop-types/lib/has.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/noise-suppression/processor.js ***!
+        \********************************************/
+
+/*!*********************************************!*\
+        !*** ./node_modules/object-assign/index.js ***!
+        \*********************************************/
+
+/*!*********************************************!*\
+        !*** ./src/virtual-background/processor.js ***!
+        \*********************************************/
+
+/*!**********************************************!*\
+        !*** ./node_modules/css-mediaquery/index.js ***!
+        \**********************************************/
+
+/*!***********************************************!*\
+        !*** ./node_modules/matchmediaquery/index.js ***!
+        \***********************************************/
+
+/*!***************************************************!*\
+        !*** ./node_modules/prop-types/checkPropTypes.js ***!
+        \***************************************************/
+
+/*!****************************************************!*\
+        !*** ./node_modules/hyphenate-style-name/index.js ***!
+        \****************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/shallow-equal/dist/index.esm.js ***!
+        \******************************************************/
+
+/*!**********************************************************!*\
+        !*** ./src/noise-suppression/VideoSDKNoiseSuppressor.js ***!
+        \**********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/react-is/cjs/react-is.development.js ***!
+        \***********************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+        \************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+        \*************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./src/face-detection/VideoSDKFaceDetectionPorcessor.js ***!
+        \**************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/@shiguredo/rnnoise-wasm/dist/rnnoise.mjs ***!
+        \***************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/@mediapipe/tasks-vision/vision_bundle.mjs ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/@shiguredo/rnnoise-wasm/dist/rnnoise.wasm ***!
+        \****************************************************************/
+
+/*!**********************************************************************!*\
+        !*** ./src/virtual-background/VideoSDKVirtualBackgroundProcessor.js ***!
+        \**********************************************************************/
+
+/*!**************************************************************************************!*\
+        !*** external {"commonjs":"react","commonjs2":"react","amd":"react","root":"React"} ***!
+        \**************************************************************************************/
+
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+         * react-is.development.js
+         *
+         * Copyright (c) Facebook, Inc. and its affiliates.
+         *
+         * This source code is licensed under the MIT license found in the
+         * LICENSE file in the root directory of this source tree.
+         */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
