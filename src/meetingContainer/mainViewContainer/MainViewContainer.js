@@ -25,6 +25,7 @@ import { useMediaQuery } from "react-responsive";
 import WhiteboardContainer, {
   convertHWAspectRatio,
 } from "../../components/whiteboard/WhiteboardContainer";
+import {meetingModes} from "../../CONSTS";
 
 const MemoizedParticipant = React.memo(
   ParticipantViewer,
@@ -248,6 +249,7 @@ const MainViewContainer = ({
     if (presenterId || whiteboardStarted) {
       const remainingParticipants = [...participants.keys()].filter(
         (pId) => mainParticipants.findIndex((id) => id === pId) === -1
+          && participants.get(pId).mode === meetingModes.CONFERENCE
       );
 
       mainParticipants = [...mainParticipants, ...remainingParticipants];
