@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useResponsiveSize from "../utils/useResponsiveSize";
-import animationData from "../../src/animations/join_meeting.json";
+import animationData from "../../src/animations/circleRipple.json";
 import Lottie from "react-lottie";
 import { Box, useTheme } from "@mui/material";
 import { appThemes, useMeetingAppContext } from "../MeetingAppContextDef";
@@ -11,8 +11,8 @@ const WaitingToJoin = () => {
   const theme = useTheme();
 
   const waitingMessages = [
-    { index: 0, text: "Creating a room for you..." },
-    { index: 1, text: "Almost there..." },
+    { index: 0, text: "" },
+    { index: 1, text: "" },
   ];
   const [message, setMessage] = useState(waitingMessages[0]);
 

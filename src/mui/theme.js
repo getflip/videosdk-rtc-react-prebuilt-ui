@@ -34,8 +34,8 @@ export default function generateMuiTheme(type, primary, secondary) {
           contrastText: "#95959E",
         },
         lightTheme: {
-          main: "#FFFFFF", //"#F3F4F8",
-          two: "#EEF0F2",
+          main: "#F2F2F2FF", //"#F3F4F8",
+          two: "#FFF",
           three: "#D3D7DA", //"#CCD2DB",
           four: "#8896A4",
           five: "#6F767E",

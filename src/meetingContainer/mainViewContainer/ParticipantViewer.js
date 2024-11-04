@@ -27,7 +27,6 @@ import circleRipple from "../../animations/circleRipple.json";
 import { Pin } from "../../icons";
 import useIsLGDesktop from "../../utils/useIsLGDesktop";
 import ReactPlayer from "react-player";
-import NetworkIcon from "../../icons/NetworkIcon";
 import { CloseOutlined } from "@mui/icons-material";
 import { useMediaQuery } from "react-responsive";
 
@@ -284,7 +283,7 @@ export const CornerDisplayName = ({
           transform: `scale(${show ? 1 : 0})`,
           backgroundColor:
             appTheme === appThemes.LIGHT
-              ? theme.palette.lightTheme.three
+              ? '#00000099'
               : "#00000066",
           borderRadius: 6,
           display: "flex",
@@ -298,13 +297,12 @@ export const CornerDisplayName = ({
           variant={isLGDesktop ? "subtitle1" : "subtitle2"}
           style={{
             justifyContent: "center",
-            fontSize: isRecorder ? (isMobile && isPortrait ? 24 : 12) : null,
+            fontSize: isRecorder ? (isMobile && isPortrait ? 24 : 14) : null,
             display: "flex",
+            fontWeight: 'normal',
             alignItems: "center",
-            // lineHeight: 1,
-            color:
-              appTheme === appThemes.LIGHT ?
-              theme.palette.lightTheme.contrastText : "white",
+            lineHeight: 1.5,
+            color: "white",
           }}
         >
           {isPresenting
@@ -428,16 +426,6 @@ export const CornerDisplayName = ({
                 cursor: "pointer",
               }}
             >
-              <NetworkIcon
-                color1={"#ffffff"}
-                color2={"#ffffff"}
-                color3={"#ffffff"}
-                color4={"#ffffff"}
-                style={{
-                  height: analyzerSize * 0.6,
-                  width: analyzerSize * 0.6,
-                }}
-              />
             </div>
             <div
               style={{
@@ -781,7 +769,7 @@ const ParticipantViewer = ({ participantId, quality, useVisibilitySensor }) => {
           setOverlaidInfoVisible((s) => !s);
         }}
         style={{
-          height: "100%",
+          height: "auto",
           width: "100%",
           backgroundColor:
             appTheme === appThemes.DARK
@@ -791,7 +779,7 @@ const ParticipantViewer = ({ participantId, quality, useVisibilitySensor }) => {
               : theme.palette.background.paper,
           position: "relative",
           overflow: "hidden",
-          borderRadius: isRecorder ? null : theme.spacing(1),
+          borderRadius: theme.spacing(1),
         }}
         className={`${
           maintainLandscapeVideoAspectRatio && !portrait
@@ -817,7 +805,7 @@ const ParticipantViewer = ({ participantId, quality, useVisibilitySensor }) => {
               //
               url={mediaStream}
               //
-              height={"100%"}
+              height={"auto"}
               width={"100%"}
               style={!isMirrorViewChecked && flipStyle}
               onError={(err) => {

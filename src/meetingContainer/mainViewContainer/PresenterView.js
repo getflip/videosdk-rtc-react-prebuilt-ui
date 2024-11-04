@@ -43,6 +43,7 @@ const PresenterView = ({ presenterId }) => {
     selectedOutputDeviceId,
     setOverlaidInfoVisible,
     mainViewParticipants,
+    isRecorder,
     meetingLayout,
     animationsEnabled,
     appTheme,
@@ -140,33 +141,22 @@ const PresenterView = ({ presenterId }) => {
       }}
       style={{
         position: "relative",
-        height: "100%",
+        height: "auto",
         width: "100%",
+        borderRadius: theme.spacing(1),
         backgroundColor:
           appTheme === appThemes.DARK
             ? theme.palette.darkTheme.slightLighter
             : appTheme === appThemes.LIGHT
             ? theme.palette.lightTheme.two
             : "black",
-        alignItems:
-          mobilePortrait && meetingLayout !== meetingLayouts.SPOTLIGHT
-            ? undefined
-            : "center",
-        justifyContent:
-          mobilePortrait && meetingLayout !== meetingLayouts.SPOTLIGHT
-            ? undefined
-            : "center",
-        display:
-          mobilePortrait && meetingLayout !== meetingLayouts.SPOTLIGHT
-            ? undefined
-            : "flex",
       }}
     >
       <audio autoPlay playsInline controls={false} ref={audioPlayer} />
 
       <div
         style={{
-          height: mobilePortrait ? "50%" : "100%",
+          height:"auto",
           width: "100%",
           position: "relative",
         }}
@@ -214,7 +204,7 @@ const PresenterView = ({ presenterId }) => {
                 appTheme === appThemes.DARK
                   ? theme.palette.darkTheme.slightLighter
                   : appTheme === appThemes.LIGHT
-                  ? theme.palette.lightTheme.two
+                  ? theme.palette.lightTheme.main
                   : "#333244",
             }}
           >
@@ -275,6 +265,7 @@ const PresenterView = ({ presenterId }) => {
           pin,
           unpin,
           pinState,
+          isRecorder,
           isPresenting: true,
           participantId: presenterId,
           mouseOver,

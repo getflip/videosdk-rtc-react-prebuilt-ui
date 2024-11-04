@@ -154,6 +154,8 @@ const MotionParticipantContainer = ({
         style={{
           height: `calc(100% - ${2 * gutter}px)`,
           width: `calc(100% - ${2 * gutter}px)`,
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <MemoizedParticipant
@@ -206,8 +208,6 @@ const MainViewContainer = ({
     sm: 12,
     xs: 8,
   });
-
-  const gutter = 4;
 
   const {
     mainViewParticipants,
@@ -452,7 +452,9 @@ const MainViewContainer = ({
     mainScreenViewActive,
   ]);
 
-  const spacing = reduceEdgeSpacing ? 4 : rowSpacing - gutter;
+  const gutter = singleRow.length > 1 || !!presenterId ?  8 : 0;
+
+  const spacing = reduceEdgeSpacing ? 0 : rowSpacing - gutter;
 
   const theme = useTheme();
 
@@ -560,12 +562,14 @@ const MainViewContainer = ({
                   ? appTheme === appThemes.DARK
                     ? theme.palette.darkTheme.slightLighter
                     : appTheme === appThemes.LIGHT
-                    ? theme.palette.lightTheme.two
+                    ? theme.palette.lightTheme.main
                     : theme.palette.background.paper
                   : undefined,
               transition: `width ${800 * (animationsEnabled ? 1 : 0.5)}ms`,
               transitionTimingFunction: "ease-in-out",
-              borderRadius: theme.spacing(1),
+              borderRadius: theme.spacing(0),
+              display:'flex',
+              alignItems:'center',
               overflow: "hidden",
               position: "relative",
             }}
@@ -643,7 +647,7 @@ const MainViewContainer = ({
                   ? theme.palette.lightTheme.main
                   : theme.palette.background.default,
               overflowX: "hidden",
-              overflowY: mainScreenViewActive ? "scroll" : "hidden",
+              overflowY: "hidden",
               width: mainScreenViewActive
                 ? actualPresentingSideBarWidth
                 : width - 2 * spacing,
@@ -682,7 +686,7 @@ const MainViewContainer = ({
               style={{
                 height:
                   (mainScreenViewActive
-                    ? (singleRow.length * actualPresentingSideBarWidth * 2) / 3
+                    ? (singleRow.length * actualPresentingSideBarWidth * 2) / 3.5
                     : height) -
                   2 * spacing -
                   (singleRow.length === 2 && !mainScreenViewActive && !isMobile

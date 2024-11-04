@@ -41,12 +41,9 @@ import {
   RECORDER_MAX_GRID_SIZE,
   RECORDER_MAX_GRID_SIZE_WITH_SCREENSCHARE_ENABLED,
 } from "../CONSTS";
-import { Box } from "@mui/material";
 import { useTheme } from "@mui/system";
 import PollsListner from "../components/PollListner";
-import RecordingLoader from "../components/RecordingLoader";
 import useCustomTrack from "../utils/useCustomTrack";
-import ResolutionListner from "../components/ResolutionListner";
 import RealTimeCaptionProvider from "../components/RealTimeCaptionProvider";
 
 const getPinMsg = ({
@@ -935,28 +932,7 @@ const MeetingContainer = () => {
       ) : askJoin ? (
         <ClickAnywhereToContinue title="Waiting to join..." />
       ) : !mMeeting.isMeetingJoined ? (
-        isRecorder ? (
-          <Box
-            style={{
-              display: "flex",
-              flex: 1,
-              flexDirection: "column",
-              height: "100vh",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor:
-                appTheme === appThemes.DARK
-                  ? theme.palette.darkTheme.slightLighter
-                  : appTheme === appThemes.LIGHT
-                  ? theme.palette.lightTheme.two
-                  : theme.palette.background.default,
-            }}
-          >
-            <RecordingLoader {...{ meetingLayout, appTheme }} />
-          </Box>
-        ) : (
-          <WaitingToJoin />
-        )
+        <WaitingToJoin />
       ) : null}
     </div>
   );
