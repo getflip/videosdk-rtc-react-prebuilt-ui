@@ -1,59 +1,24 @@
-name: ReleaseNotice
+name: Deploy
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      # To check the github context
-      - name: Dump Github context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Slack Notification on SUCCESS
-        if: success()
-        uses: tokorom/action-slack-incoming-webhook@main
-        env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          text: A release is published.
-          blocks: |
-            [
-              {
-                "type": "header",
-                "text": {
-                  "type": "plain_text",
-                  "text": "Prebuilt SDK Example with ${{ github.event.release.tag_name}} is published!"
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*Author:*\n${{ github.actor }}"
-                }
-              },
-               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*Release Information:*"
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": ${{ toJSON(github.event.release.body) }}
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${{ github.event.release.html_url }}"
-                }
-              }
-            ]
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: CI=false && npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build

@@ -2,7 +2,7 @@
   "name": "videosdk-rtc-react-prebuilt-ui",
   "version": "0.3.42",
   "private": true,
-  "homepage": "https://embed.videosdk.live/rtc-js-prebuilt/0.3.42/",
+  "homepage": "https://getflip.github.io/videosdk-rtc-react-prebuilt-ui",
   "dependencies": {
     "@emoji-mart/react": "^1.1.1",
     "@emotion/react": "^11.11.4",
