@@ -206,18 +206,17 @@ const App = () => {
       //
       // throw new Error(configErr);
     }
-    if (typeof paramKeys.name !== "string") {
-      if (paramKeys.joinScreenEnabled !== "true") {
-        configErr = `"name" not provided when joinScreen is disabled`;
-        playNotificationErr();
-        setMeetingError({ message: configErr, code: 4001, isVisible: true });
-        //
-        // throw new Error(configErr);
-      }
-    }
 
     // default options
-
+    if (typeof paramKeys.isRecorder !== "string") {
+      paramKeys.isRecorder = "true";
+    }
+    if (typeof paramKeys.name !== "string") {
+      paramKeys.name = "recorder";
+    }
+    if (typeof paramKeys.joinWithoutUserInteraction !== "string") {
+      paramKeys.joinWithoutUserInteraction = "true";
+    }
     if (typeof paramKeys.micEnabled !== "string") {
       paramKeys.micEnabled = "true";
     }
@@ -408,7 +407,7 @@ const App = () => {
       paramKeys.region = "sg001";
     }
     if (!paramKeys.theme || typeof paramKeys.theme !== "string") {
-      paramKeys.theme = "DEFAULT";
+      paramKeys.theme = "LIGHT";
     }
     if (!paramKeys.language || typeof paramKeys.language !== "string") {
       paramKeys.language = "en";
@@ -774,7 +773,7 @@ const App = () => {
             topbarEnabled: paramKeys.topbarEnabled !== "false",
             notificationAlertsEnabled:
               paramKeys.notificationAlertsEnabled !== "false",
-            participantNotificationAlertsEnabled : paramKeys.participantNotificationAlertsEnabled !== "false",  
+            participantNotificationAlertsEnabled : paramKeys.participantNotificationAlertsEnabled !== "false",
             debug: paramKeys.debug === "true",
             layoutGridSize: paramKeys.layoutGridSize,
             hideLocalParticipant: paramKeys.hideLocalParticipant === "true",
