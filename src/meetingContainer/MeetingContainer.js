@@ -23,7 +23,6 @@ import {
 import { useSnackbar } from "notistack";
 import useResponsiveSize from "../utils/useResponsiveSize";
 import useRaisedHandParticipants from "./useRaisedHandParticipants";
-import MediaRequested from "../components/MediaRequested";
 import RequestedEntries from "../components/RequestedEntries";
 import ClickAnywhereToContinue from "../components/ClickAnywhereToContinue";
 import PinnedLayoutViewContainer from "./pinnedLayoutViewContainer/PinnedLayoutViewContainer";
@@ -618,6 +617,10 @@ const MeetingContainer = () => {
   const _handleOnMeetingStateChanged = (data) => {
     const { state } = data;
 
+    if (!notificationAlertsEnabled) {
+      return;
+    }
+
     enqueueSnackbar(
       state === "CONNECTED"
         ? "Meeting is connected"
@@ -898,7 +901,6 @@ const MeetingContainer = () => {
                       />
                     )}
                     <ParticipantsAudioPlayer />
-                    <MediaRequested />
                     <RequestedEntries />
                   </>
                 ) : (
